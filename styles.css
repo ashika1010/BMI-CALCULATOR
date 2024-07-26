@@ -1,0 +1,149 @@
+body {
+    font-family: 'Great Vibes', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.background img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(247, 247, 247, 0.5); /* Made the background more transparent */
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #337ab7; /* Same shade of blue as the BMI calculator */
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+label {
+    grid-column: 1;
+    align-self: center;
+    font-weight: 400;
+    color: #333; /* Dark grey text */
+    font-family: 'Playfair Display', serif;
+}
+
+input[type="number"] {
+    grid-column: 2;
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333; /* Dark grey text */
+    font-family: 'Raleway', sans-serif;
+}
+
+select {
+    grid-column: 2;
+    width: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333; /* Dark grey text */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12"><path fill="%23fff" d="M7 0l7 7-7 7z"/></svg>');
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    grid-column: 1 / -1; /* Make the button span across both columns */
+    justify-self: center; /* Center the button horizontally */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #337ab7; /* Same shade of blue as the BMI calculator */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button[type="submit"]:hover {
+    background-color: #23527c;
+}
+
+#bmi-result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    text-align: center; /* Center the text horizontally */
+    display: flex; /* Make it a flex container */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    color: #337ab7; /* Same shade of blue as the BMI calculator */
+}
+
+/* Add different colors for different BMI ranges */
+#bmi-result {
+    color: #337ab7; /* Same shade of blue as the BMI calculator */
+}
+
+#bmi-result.overweight, #bmi-result.obese {
+    color: #f1c40f; /* Yellow for overweight and obese BMI */
+}
+
+#bmi-result.underweight {
+    color: #3498db; /* Blue for underweight BMI */
+}
+
+/* Add some responsiveness */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 80%;
+    }
+    label {
+        font-size: 14px;
+    }
+    input[type="number"] {
+        width: 60%;
+    }
+}
